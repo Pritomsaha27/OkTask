@@ -27,6 +27,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div>
+          <img className="w-32 ml-10 mt-4" src="/logo.png" alt="" />
+        </div>
         {children}
       </body>
     </html>
