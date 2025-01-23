@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import { FaEdit, FaTrash, FaPlus } from "react-icons/fa";
-
+import { FaSave } from "react-icons/fa";
 function TodoApp() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
@@ -26,7 +26,6 @@ function TodoApp() {
     setEditingText(tasks[index]);
   };
 
-  // Save Edited Task
   const saveTask = () => {
     if (editingText.trim()) {
       const updatedTasks = tasks.map((task, index) =>
@@ -39,10 +38,9 @@ function TodoApp() {
   };
 
   return (
-    <div className="p-6 max-w-md mx-auto bg-gray-100 rounded shadow">
-      <h1 className="text-2xl font-bold text-center mb-4">To-Do List</h1>
+    <div className="p-6 max-w-xl mx-auto bg-gray-100 rounded shadow">
+      <h1 className="text-3xl font-extrabold text-slate-600 text-center mb-4">TODO LIST</h1>
 
-      {/* Input and Add Button */}
       <div className="flex gap-2 mb-4">
         <input
           type="text"
@@ -59,7 +57,6 @@ function TodoApp() {
         </button>
       </div>
 
-      {/* Task List */}
       <ul>
         {tasks.map((task, index) => (
           <li
@@ -83,7 +80,7 @@ function TodoApp() {
                   onClick={saveTask}
                   className="px-2 py-1 bg-green-500 text-white rounded hover:bg-green-600"
                 >
-                  Save
+                <FaSave />
                 </button>
               ) : (
                 <button
